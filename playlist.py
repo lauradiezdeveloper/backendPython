@@ -15,8 +15,9 @@ headers = {
 }
 response = requests.request("GET", url, headers=headers, params=querystring).json() 
 
+dict(response)
 my_list = []
 
 for element in response['data']:
     my_list.append((element['title'], element['artist']['name']))
-    print(dict(my_list))
+    print(my_list)
